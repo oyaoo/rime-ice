@@ -18,8 +18,8 @@ candidate_setting:
 # -------调整完毕，如果出现上下档字符偏离键位，可调节下面项------
 keyboard_height:
 # ----------键盘高度调整------------
-  A: &VJG 55      #主辅键盘键高  自定
-  B: &VJM 55     #主辅键盘末行键高  B≈A，如主键盘和符号键盘不等高，调整此数
+  A: &VJG 45      #主辅键盘键高  自定
+  B: &VJM 50     #主辅键盘末行键高  B≈A，如主键盘和符号键盘不等高，调整此数
   C: &FJG 50     #符号键盘键高  (FJG × 5) + (FJH × 6) = (VJG × 4) + (VJH × 5) 解方程可以求出FJG = 50
   E: &DsymY 0.5        #主键盘上档文字纵向位置调节，负数上移，下同
   F: &DsymX 0          #主键盘上档文字横向位置调节，负数左移
@@ -33,7 +33,7 @@ keyboard_height:
   N: &CQ_text_size 20
   O: &VJG_Other 53
   P: &NUM_SYM_W 15.5   # 数字  符号键盘  宽度
-  Q: &hgap 4       #键盘横缝大小
+  Q: &hgap 5       #键盘横缝大小
 #-------调节尽量以配色中键高最低的配色为标准------
 other:
 #主键盘结构（四行）
@@ -58,7 +58,7 @@ colors:
 #界面风格、功能开关
 style:
   auto_caps: true #自動句首大寫:true|false|ascii
-  keyboard_height: 240 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height: 230 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
   keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
   keyboard_padding: 2 #竖屏模式下，屏幕左右两侧与键盘的距离（曲面屏减少误触）
   background_dim_amount: 0.5
