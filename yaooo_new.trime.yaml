@@ -1,7 +1,7 @@
 # Trime default style settings
 # encoding: utf-8
 
-config_version: "2024年5月7日"
+config_version: "2023年10月26日"
 name: yaooo #方案名称
 author: yaooo
 description: 改自同文风增强版
@@ -18,8 +18,8 @@ candidate_setting:
 # -------调整完毕，如果出现上下档字符偏离键位，可调节下面项------
 keyboard_height:
 # ----------键盘高度调整------------
-  A: &VJG 45      #主辅键盘键高  自定
-  B: &VJM 46     #主辅键盘末行键高  B≈A，如主键盘和符号键盘不等高，调整此数
+  A: &VJG 55      #主辅键盘键高  自定
+  B: &VJM 55     #主辅键盘末行键高  B≈A，如主键盘和符号键盘不等高，调整此数
   C: &FJG 50     #符号键盘键高  (FJG × 5) + (FJH × 6) = (VJG × 4) + (VJH × 5) 解方程可以求出FJG = 50
   E: &DsymY 0.5        #主键盘上档文字纵向位置调节，负数上移，下同
   F: &DsymX 0          #主键盘上档文字横向位置调节，负数左移
@@ -33,19 +33,19 @@ keyboard_height:
   N: &CQ_text_size 20
   O: &VJG_Other 53
   P: &NUM_SYM_W 15.5   # 数字  符号键盘  宽度
-  Q: &hgap 5       #键盘横缝大小
+  Q: &hgap 4       #键盘横缝大小
 #-------调节尽量以配色中键高最低的配色为标准------
 other:
 #主键盘结构（四行）
-  a: &VJH 10      #主键盘行距  建议不动
-  b: &VJL 6      #主键盘列距
+  a: &VJH 8      #主键盘行距  建议不动
+  b: &VJL 5      #主键盘列距
   c: &VJY 20      #主键盘圆角
 #符号键盘结构（五行）
-  d: &FJH 8      #符号键盘行距  建议不动
-  e: &FJL 8      #符号键盘列距
+  d: &FJH 2      #符号键盘行距  建议不动
+  e: &FJL 2      #符号键盘列距
   f: &FJY 20      #符号键盘圆角
 #数字键盘结构（四行）
-  g: &NJH 8      #数字键盘行距  建议不动
+  g: &NJH 6      #数字键盘行距  建议不动
   h: &NJL 8      #数字键盘列距
   i: &NJY 20      #数字键盘圆角
 
@@ -57,11 +57,10 @@ colors:
 
 #界面风格、功能开关
 style:
-  auto_caps: true #自動句首大寫:true|false|ascii
-  keyboard_height: 230 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  auto_caps: false #自動句首大寫:true|false|ascii
+  keyboard_height: 240 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
   keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
   keyboard_padding: 2 #竖屏模式下，屏幕左右两侧与键盘的距离（曲面屏减少误触）
-  keyboard_padding_bottom: 26 #竖屏模式下，屏幕下边缘与键盘的距离（减少全面屏误触）
   background_dim_amount: 0.5
   root_background: keyboard_back_color # 整个键盘区+候选栏的背景图/色
   handwriting: {toggle: _handwriting, send: Mode_switch, states: [ 手写, 手写 ] }
@@ -502,7 +501,7 @@ liquid_keyboard:
   single_width: 55    #single类型的按键宽度
   vertical_gap: 8     #纵向按键间隙
   margin_x: 3        #左右按键间隙的1/2
-  horizontal_gap: 8  #水平间距
+  horizontal_gap: 6  #水平间距
   keyboards: [history, collection, emoji, math, ascii, cn, clipboard, list, symbol, pinyin, unit, yanwenzi, emoji_full]  #tab列表
   history:
     name: 常用
@@ -563,7 +562,7 @@ liquid_keyboard:
   unit:
     name: 单位
     type: SINGLE
-    keys: ["℃", "¥", "$", "€", "฿", "￡", "㎡", "m", "³", "℉", "￥", "£", "￠", "₠", "¹", "²", "³", "⁴", "⁵", "ⁿ", "⁶", "⁷", "⁸", "⁹", "⁰", "ˣ", "⁺", "⁻", "⁼", "⁽", "⁾", "½", "⅓", "¼", "⅔", "¾", "₁", "₂", "₃", "₄", "₅", "ₙ", "₆", "₇", "₈", "₉", "₀", "ₓ", "₊", "₋", "₌", "₍", "₎", "℅"]
+    keys: "℃¥$€฿￡㎡m³℉￥£￠₠¹²³⁴⁵ⁿ⁶⁷⁸⁹⁰ˣ⁺⁻⁼⁽⁾½⅓¼⅔¾₁₂₃₄₅ₙ₆₇₈₉₀ₓ₊₋₌₍₎℅"
   list:
     name: 列表
     type: SINGLE
