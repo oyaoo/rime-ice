@@ -496,12 +496,19 @@ liquid_keyboard:
   author: "tumuyan"
   row: 6              #每屏最多显示多少行按键
   row_land: 5         #横屏每屏最多显示多少行按键
-  key_height: 30      #按键高度
+  key_height: 43      #按键高度
   key_height_land: 30 #横屏模式按键高度
-  single_width: 55    #single类型的按键宽度
+  single_width: 60    #single类型的按键宽度
   vertical_gap: 8     #纵向按键间隙
   margin_x: 3        #左右按键间隙的1/2
   horizontal_gap: 6  #水平间距
+  fixed_key_bar:  # 固定按键条
+    position: right  # 摆放位置（在滚动区域的……） top|bottom|left|right （上/下/左/右）
+    keys:  # 按键（显示名称为对应的label，不能放太多）
+      - liquid_keyboard_exit  # 返回键（在preset_keys内定义，同下）
+      - BackSpace_Ch  # 退格键
+      - space_Ch  # 空格键
+      - Return_Ch  # 回车键
   keyboards: [history, collection, emoji, math, ascii, cn, clipboard, list, symbol, pinyin, unit, yanwenzi, emoji_full]  #tab列表
   history:
     name: 常用
@@ -745,3 +752,6 @@ preset_keys:
   Sync: {label: 同步, send: function, command: broadcast, option: "com.osfans.trime.sync"}
   liquid_keyboard_clipboard: { label: 剪贴, send: function, command: liquid_keyboard, option: "剪贴" }
   liquid_keyboard_switch: { label: 更多, send: function, command: liquid_keyboard, option: "英文" }
+  liquid_keyboard_exit: {label: 返回, send: function, command: liquid_keyboard, option: "-1"}  #退出liquidkeyboard
+  liquid_keyboard_tabs: { label: 更多, send: function, command: liquid_keyboard, option: "更多" }
+  liquid_keyboard_emoji: { label: 🙂, send: function, command: liquid_keyboard, option: "emoji" }
