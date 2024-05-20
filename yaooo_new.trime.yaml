@@ -365,7 +365,7 @@ preset_keyboards:
       - {click: space3, width: *NUM_SYM_W, swipe_up: 0, key_text_size: 20}
 
       - {click: K_back, width: *NUM_SYM_W, swipe_up: Color_switch, key_text_size: 16}
-      - {click: liquid_keyboard_switch, key_text_offset_x: 3, key_symbol_offset_x: -12, key_symbol_offset_y: 20, key_symbol_color: key_symbol_color, key_text_size: 16}
+      - {click: liquid_keyboard_switch, key_symbol_offset_x: -12, key_symbol_offset_y: 20, key_symbol_color: key_symbol_color, key_text_size: 16}
       - {click: 0, swipe_up: 0, key_text_size: 20}
       - {click: "%", key_text_offset_x: 3, key_symbol_offset_x: -12, key_symbol_offset_y: 18, long_click: "=", key_symbol_color: key_symbol_color, key_text_size: 16}
       - {click: Return, width: *NUM_SYM_W, key_back_color: hcb, key_text_color: tenter, key_text_size: 16}
@@ -508,8 +508,8 @@ liquid_keyboard:
     position: right  # 摆放位置（在滚动区域的……） top|bottom|left|right （上/下/左/右）
     keys:  # 按键（显示名称为对应的label，不能放太多）
       - liquid_keyboard_exit  # 返回键（在preset_keys内定义，同下）
-      - BackSpace_Ch  # 退格键
       - space_Ch  # 空格键
+      - BackSpace_Ch  # 退格键
       - Return_Ch  # 回车键
   keyboards: [history, collection, emoji, math, ascii, cn, clipboard, list, symbol, pinyin, unit, yanwenzi, emoji_full]  #tab列表
   history:
