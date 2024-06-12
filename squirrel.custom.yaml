@@ -4,39 +4,42 @@ patch:
   style:
       color_scheme: Wechat             # 方案命名，不能有空格
       color_scheme_dark: mritd_dark
-      translucency: true
-      alpha: 0.95
-      shadow_size: 5                          # 以指定所选候选项下的阴影。默认为 0 ，无阴影。
-      mutual_exclusive: true                  # true / false 以允许颜色不重叠，并具有更大的透明度灵活性。默认为 false 
-      candidate_list_layout: linear           # 水平排列 linear | stacked
-      text_orientation: horizontal            # horizontal | vertical
-      border_height: 3                        # 窗口边界高度，大于圆角半径才生效
-      border_width: 3                         # 窗口边界宽度，大于圆角半径才生效
-      candidate_format: "%c\u2005%@ \u2005"   # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
-      corner_radius: 6                        # 候选条圆角
-      hilited_corner_radius: 4                # 高亮圆角
-      inline_preedit: true                    # 单行显示，false双行显示
-      border_color_width: 0
-      font_face: "PingFangSC"                    # 候选词字体
-      font_point: 16                          # 候选字词大小
-      label_font_point: 12                    # 候选编号大小
+      font_face: "PingFangSC"    # 使用苹方字体
+      font_point: 16.0                   # 字体大小为16.0
+      label_font_face: "PingFangSC"  # 序号专用字体为微软雅黑
+      label_font_point: 12.0             # 序号专用字号为12.0
+      comment_font_face: "PingFangSC"  # 注释专用字体为苹方
+      comment_font_point: 12.0           # 注释专用字号为12.0
+      candidate_list_layout: linear      # 候选词平铺显示
+      text_orientation: horizontal       # 文字横排显示
+      inline_preedit: true               # 行内编辑
+      translucency: true                 # 添加毛玻璃背景
+      mutual_exclusive: true             # 候选区各背景色互不浸染
+      corner_radius: 8.0                 # 候选外框圆角大小为8.0
+      hilited_corner_radius: 6.0         # 高亮区圆角大小为6.0
+      border_height: 2.0                 # 边缘高度为2.0
+      border_width: 6.0                  # 边缘宽度为6.0
+      alpha: 0.95                        # 透明度为0.95
+      shadow_size: 6.0                   # 高亮候选词阴影大小为6.0
+      candidate_format: "%c\u2005%@\u2005"   # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
+      layout:
+        align_type: bottom                     # 对齐：top ; center ; bottom
 
-  
   preset_color_schemes:
     Wechat:
       name: "Wechat"
-      color_space: display_p3                 # Only available on macOS 10.12+
-      back_color: 0xFFFFFF                    # 候选条背景色，24位色值，16进制，BGR顺序
-      border_color: 0xFFFFFF                  # 边框色
-      candidate_text_color: 0x000000          # 预选项文字颜色
-      comment_text_color: 0x999999            # 拼音等提示文字颜色
-      hilited_candidate_back_color: 0x75B100  # 第一候选项背景背景色
-      hilited_candidate_text_color: 0xFFFFFF  # 第一候选项文字颜色
-      hilited_candidate_label_color: 0xE7E7E7 # 第一候选项编号颜色
-      hilited_comment_text_color: 0xE7E7E7    # 注解文字高亮
-      hilited_text_color: 0x999999            # 高亮拼音 (需要开启内嵌编码)
-      text_color: 0x424242                    # 拼音行文字颜色
-      label_color: 0x999999                   # 预选栏编号颜色
+      color_space: srgb                  # 色值使用sRGB色域
+      back_color: 0xFFFFFF               # 候选框背景色为白色
+      border_color: 0xFFFFFF             # 候选框边框色为白色
+      candidate_text_color: 0x000000     # 候选词颜色为黑色
+      comment_text_color: 0x8C8C8C       # 候选注释颜色为灰色
+      label_color: 0x808080              # 候选序号颜色为深灰色
+      hilited_candidate_back_color: 0x75B100  # 高亮候选词背景色为绿色
+      hilited_candidate_text_color: 0xFFFFFF  # 高亮候选词颜色为白色
+      hilited_comment_text_color: 0xE1E1E1    # 高亮候选注释颜色为浅灰色
+      hilited_candidate_label_color: 0xE5E5E5  # 高亮候选序号颜色为浅灰色
+      text_color: 0x424242              # 编辑区（非高亮）编码色为深灰色
+      hilited_text_color: 0x999999      # 编辑区高亮编码色为浅灰色
       
     mritd_dark:
       name: 漠然／mritd dark
