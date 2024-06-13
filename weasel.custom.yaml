@@ -1,59 +1,21 @@
-customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.14.3
-  generator: "Weasel::UIStyleSettings"
-  modified_time: "Wed Apr  5 20:38:06 2023"
-  rime_version: 1.5.3
-app_options:  
-  cmd.exe:               # 带 .exe 的进程名：Weasel 15.0 及之前版本须小写; PR #1049 合并后释出的版本大小写不敏感
-    ascii_mode: true 
-  powershell.exe:
-    ascii_mode: true
-  
+config_version: "2024-06-13"
 patch:
-  preset_color_schemes:
-     WeChat:
-       name: WeChat
-       color_space: srgb                  # 色值使用sRGB色域
-       back_color: 0xF2FFFFFF               # 候选框背景色为白色
-       border_color: 0xFFFFFF             # 候选框边框色为白色
-       shadow_color: 0x4D000000                # 阴影
-       candidate_text_color: 0x000000     # 候选词颜色为黑色
-       comment_text_color: 0x8C8C8C       # 候选注释颜色为灰色
-       label_color: 0x808080              # 候选序号颜色为深灰色
-       hilited_candidate_back_color: 0xF274C620  # 高亮候选词背景色为绿色
-       hilited_candidate_text_color: 0xFFFFFF  # 高亮候选词颜色为白色 
-       hilited_comment_text_color: 0xE1E1E1    # 高亮候选注释颜色为浅灰色
-       hilited_label_color: 0xE5E5E5  # 高亮候选序号颜色为浅灰色k
-       text_color: 0x424242              # 编辑区（非高亮）编码色为深灰色
-       hilited_text_color: 0x999999      # 编辑区高亮编码色为浅灰色
-       
-     mritd_dark:
-      name: 漠然／mritd dark
-      color_space: srgb                   
-      text_color: 0xdedddd                      # 拼音行文字颜色，24位色值，16进制，BGR顺序
-      back_color: 0x4b4b4b                      # 候选条背景色
-      shadow_color: 0x4D000000                # 阴影
-      label_color: 0x888785                     # 预选栏编号颜色
-      border_color: 0x4b4b4b                    # 边框色
-      candidate_text_color: 0xffffff            # 预选项文字颜色
-      hilited_text_color: 0xdedddd              # 高亮拼音 (需要开启内嵌编码)
-      hilited_back_color: 0x252320              # 高亮拼音 (需要开启内嵌编码)
-      hilited_candidate_text_color: 0xFFE696    # 第一候选项文字颜色
-      hilited_candidate_back_color: 0x4b4b4b    # 第一候选项背景背景色
-      hilited_label_color: 0xffffff   # 第一候选项编号颜色
-      comment_text_color: 0xdedddd              # 拼音等提示文字颜色
-       
+  app_options:
+     cmd.exe:{ascii_mode: true}
+  show_notifications: true                   # 是否显示状态变化的通知：true；false；option_list（方案内的开头 option）
+  show_notifications_time: 1200              # 通知显示的时间，单位 ms
+  global_ascii: false
+
   style:
     color_scheme: WeChat
     color_scheme_dark: mritd_dark 
-    #candidate_format: "%c\u2005%@\u2005"         # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间的。
+    #candidate_format: "%c\u2005%@\u2005"        # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间的。
     font_face: "Segoe UI Emoji, Microsoft YaHei UI, SF Pro, Noto Color Emoji"    # 默认字体。为了保证部分 emoji 能正常显示，建议将 emoji 字体放在首位，并指定起始码位防止影响其他字符。refer <https://github.com/rime/weasel/issues/932>
-    label_font_face: "Microsoft YaHei UI"           # 标签字体
-    comment_font_face: "Microsoft YaHei UI"         # 注释字体
-    font_point: 12                               # 默认字体大小
-    label_font_point: 9                         # 标签字体大小，不设定 fallback 到 font_point
-    comment_font_point: 9                      # 注释字体大小，不设定 fallback 到 font_point
+    label_font_face: "Microsoft YaHei UI"        # 标签字体
+    comment_font_face: "Microsoft YaHei UI"      # 注释字体
+    font_point: 13                               # 默认字体大小
+    label_font_point: 10                         # 标签字体大小，不设定 fallback 到 font_point
+    comment_font_point: 9                        # 注释字体大小，不设定 fallback 到 font_point
     inline_preedit: true                         # 行内显示预编辑区：true；false
     preedit_type: composition                    # 预编辑区内容：composition（编码）； preview（高亮候选）；preview_all（全部候选）
     # 布局设定，同样可以在 layout 的 type 下指定
@@ -72,6 +34,7 @@ patch:
     hover_type: hilite                           # 鼠标在候选窗口悬停时：none（无动作）；hilite（选中鼠标下的候选）；semi_hilite（高亮鼠标下的候选）
     paging_on_scroll: false                      # 在候选窗口上滚轮操作时，对应的响应动作。如设定为 true，则进行翻页操作；如设定为 false（默认)，则进行候选 index 切换（类似上下方向键）
     click_to_capture: false                  # 鼠标点击候选项，创建截图：true；false
+    
     layout:
       baseline: 0                            # 字号百分比，与 linespacing 一同设置可解决字体跳动问题，设置为 0 为禁用
       linespacing: 0                         # 字号百分比，参考 <https://github.com/rime/weasel/pull/1177>
@@ -79,17 +42,50 @@ patch:
       max_height: 600                        # 候选框最大高度
       max_width: 1680                        # 候选框最大宽度，超过会折叠
       min_height: 0                          # 最小高度
-      min_width: 60
+      min_width: 10
       border_width: 2                        # 边框宽度，又名 border
-      margin_x: 9                           # 主体元素和候选框的左右边距；为负值时，不显示候选框
-      margin_y: 8                           # 主体元素的上下边距；为负值时，不显示候选框
+      margin_x: 9                            # 主体元素和候选框的左右边距；为负值时，不显示候选框
+      margin_y: 8                            # 主体元素的上下边距；为负值时，不显示候选框
       spacing: 10                            # inline_preedit 为否时，编码区域和候选区域的间距
       candidate_spacing: 12                  # 候选项之间的间隔
       hilite_spacing: 8                      # 候选项和相应标签的间距
       hilite_padding: 6                      # 高亮区域和内部文字的间距，影响高亮区域大小。当值 ≥ margin 的值时，高亮颜色会覆盖整个选中的候选区域，实现「天圆地方」的效果。
-      hilite_padding_y: 5                  # 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
+      hilite_padding_y: 5                    # 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
       shadow_radius: 8                       # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
       shadow_offset_x: 4                     # 阴影左右偏移距离
       shadow_offset_y: 4                     # 阴影上下偏移距离
       corner_radius: 8                       # 候选框圆角
       round_corner: 6                        # 高亮区域圆角；又名 hilited_corner_radius
+      
+  preset_color_schemes:
+     WeChat:
+       name: WeChat
+       color_space: srgb                        # 色值使用sRGB色域
+       back_color: 0xF2FFFFFF                   # 候选框背景色为白色
+       border_color: 0xFFFFFF                   # 候选框边框色为白色
+       shadow_color: 0x4D000000                 # 阴影
+       candidate_text_color: 0x000000           # 候选词颜色为黑色
+       comment_text_color: 0x8C8C8C             # 候选注释颜色为灰色
+       label_color: 0x808080                    # 候选序号颜色为深灰色
+       hilited_candidate_back_color: 0xF275B100  # 高亮候选词背景色为绿色
+       hilited_candidate_text_color: 0xFFFFFF   # 高亮候选词颜色为白色 
+       hilited_comment_text_color: 0xE1E1E1     # 高亮候选注释颜色为浅灰色
+       hilited_label_color: 0xE5E5E5            # 高亮候选序号颜色为浅灰色k
+       text_color: 0x424242                     # 编辑区（非高亮）编码色为深灰色
+       hilited_text_color: 0x999999             # 编辑区高亮编码色为浅灰色
+       
+     mritd_dark:
+      name: 漠然／mritd dark
+      color_space: srgb                   
+      text_color: 0xdedddd                      # 拼音行文字颜色，24位色值，16进制，BGR顺序
+      back_color: 0x4b4b4b                      # 候选条背景色
+      shadow_color: 0x4D000000                  # 阴影
+      label_color: 0x888785                     # 预选栏编号颜色
+      border_color: 0x4b4b4b                    # 边框色
+      candidate_text_color: 0xffffff            # 预选项文字颜色
+      hilited_text_color: 0xdedddd              # 高亮拼音 (需要开启内嵌编码)
+      hilited_back_color: 0x252320              # 高亮拼音 (需要开启内嵌编码)
+      hilited_candidate_text_color: 0xFFE696    # 第一候选项文字颜色
+      hilited_candidate_back_color: 0x4b4b4b    # 第一候选项背景背景色
+      hilited_label_color: 0xffffff             # 第一候选项编号颜色
+      comment_text_color: 0xdedddd              # 拼音等提示文字颜色

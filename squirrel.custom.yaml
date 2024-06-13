@@ -5,7 +5,7 @@ patch:
       color_scheme: Wechat             # 方案命名，不能有空格
       color_scheme_dark: mritd_dark
       font_face: "PingFangSC"    # 使用苹方字体
-      font_point: 16.0                   # 字体大小为16.0
+      font_point: 17.0                   # 字体大小为16.0
       label_font_face: "PingFangSC"  # 序号专用字体为微软雅黑
       label_font_point: 12.0             # 序号专用字号为12.0
       comment_font_face: "PingFangSC"  # 注释专用字体为苹方
@@ -22,8 +22,6 @@ patch:
       alpha: 0.95                        # 透明度为0.95
       shadow_size: 6.0                   # 高亮候选词阴影大小为6.0
       candidate_format: "%c\u2005%@\u2005"   # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
-      layout:
-        align_type: bottom                     # 对齐：top ; center ; bottom
 
   preset_color_schemes:
     Wechat:
